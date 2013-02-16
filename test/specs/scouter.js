@@ -2,7 +2,7 @@
 (function() {
 
   describe('Scouter', function() {
-    return it('can properly score the specificity of W3C\'s examples', function() {
+    it('can properly score the specificity of W3C\'s examples', function() {
       var score, scouter, selector, selectors, _results;
       scouter = new Scouter();
       selectors = {
@@ -22,6 +22,13 @@
         _results.push(expect(scouter.score(selector)).toBe(score));
       }
       return _results;
+    });
+    return it('can sort an array of selectors', function() {
+      var scouter, selectors, sortedSelectors;
+      scouter = new Scouter();
+      selectors = ['.header h1', 'h1', '.header', '.header h1 > em'];
+      sortedSelectors = ['.header h1 > em', '.header h1', '.header', 'h1'];
+      return expect(scouter.sort(selectors)).toEqual(sortedSelectors);
     });
   });
 

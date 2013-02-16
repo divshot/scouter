@@ -1,4 +1,5 @@
 describe 'Scouter', ->
+
   it 'can properly score the specificity of W3C\'s examples', ->
     scouter = new Scouter()
     selectors =
@@ -14,3 +15,9 @@ describe 'Scouter', ->
 
     for selector, score of selectors
       expect(scouter.score(selector)).toBe(score)
+
+  it 'can sort an array of selectors', ->
+    scouter = new Scouter()
+    selectors = ['.header h1', 'h1', '.header', '.header h1 > em']
+    sortedSelectors = ['.header h1 > em', '.header h1', '.header', 'h1']
+    expect(scouter.sort(selectors)).toEqual(sortedSelectors)
