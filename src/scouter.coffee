@@ -7,7 +7,7 @@ class Scouter
 
     # Classes, Attributes, Pseudo-Classes
     b = selectors.filter((element) ->
-      element.match(/\[.+\]|\.[_a-zA-Z0-9-]|:[_a-zA-Z0-9-]/)?.length && element.indexOf('::') == -1
+      element.match(/\[.+\]|(\.|:)[_a-zA-Z0-9-]/)?.length && element.indexOf('::') == -1
     )
 
     selectors = selectors.filter (i) -> !(a.concat(b).indexOf(i) > -1)
