@@ -1,6 +1,6 @@
 # Scouter
 
-**Scouter** is a CSS selector specificity utility written in CoffeeScript that adheres to the [W3C specification](http://www.w3.org/TR/CSS21/cascade.html#specificity).
+**Scouter** is a CSS selector specificity utility written in CoffeeScript that adheres to the [W3C specification](http://www.w3.org/TR/selectors/#specificity).
 
 ## Usage
 
