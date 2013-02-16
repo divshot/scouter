@@ -21,10 +21,10 @@ class Scouter
   parse: (str) ->
     selectors = []
     for selector in str.split(/[\s,+~>]+/)
-      matches = selector.match(/\[.+\]|#[_a-zA-Z0-9-]*|\.[_a-zA-Z0-9-]*|::[_a-zA-Z0-9-]*|:[_a-zA-Z0-9-]*|[_a-zA-Z0-9-]*/gi)
+      matches = selector.match(/\[.+\]|(#|\.|::|:)[_a-zA-Z0-9-]*|[_a-zA-Z0-9-]*/gi)
       if matches
         for match in matches
-          match = match.replace(/:not|\(|\)/ig, '')
+          match = match.replace(/:not|\(|\)/gi, '')
           selectors.push(match) if match.length
       else
         selectors.push(selector)
