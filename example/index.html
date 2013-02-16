@@ -1,0 +1,12 @@
+<html>
+  <head>
+    <title>Scouter</title>
+  </head>
+  <body>
+    <script src="../lib/scouter.js"></script>
+    <script>
+      console.log(scouter.score('#test div > p:not(.foo) ~ span.bar * [attr="test"]:first-child ::pseudo-element'));
+      // console.log(scouter.sort(['#test', '#test > #test2', '.testing123']));
+    </script>
+  </body>
+</html>

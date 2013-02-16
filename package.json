@@ -1,0 +1,20 @@
+{
+  "name": "scouter",
+  "version": "0.0.1",
+  "description": "Scouter",
+  "author": "Jake Johnson",
+  "license": "MIT",
+  "main": "lib/scouter.js",
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/divshot/scouter.git"
+  },
+  "keywords": [
+    "specificity",
+    "css"
+  ],
+}
