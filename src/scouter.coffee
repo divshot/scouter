@@ -10,7 +10,7 @@ class Scouter
       element.match(/\[.+\]|\.[_a-zA-Z0-9-]|:[_a-zA-Z0-9-]/)?.length && element.indexOf('::') == -1
     )
 
-    selectors = selectors.diff(a.concat(b))
+    selectors = selectors.filter (i) -> !(a.concat(b).indexOf(i) > -1)
 
     # Type Selectors, Pseudo-Elements
     c = selectors
@@ -39,7 +39,5 @@ class Scouter
       selectors.sort (a, b) => @score(a) - @score(b)
     selectors
 
-Array.prototype.diff = (a) -> this.filter (i) -> !(a.indexOf(i) > -1)
-
 root = exports ? window
-root.scouter = new Scouter
+root.Scouter = Scouter

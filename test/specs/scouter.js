@@ -3,7 +3,8 @@
 
   describe('Scouter', function() {
     return it('can properly score the specificity of W3C\'s examples', function() {
-      var score, selector, selectors, _results;
+      var score, scouter, selector, selectors, _results;
+      scouter = new Scouter();
       selectors = {
         '*': 0,
         'LI': 1,

@@ -1,5 +1,6 @@
 describe 'Scouter', ->
   it 'can properly score the specificity of W3C\'s examples', ->
+    scouter = new Scouter()
     selectors =
       '*': 0,
       'LI': 1,
